@@ -1,0 +1,25 @@
+{
+  "name": "cypress-training",
+  "version": "1.0.0",
+  "description": "This is a Workshop about Cypress",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/salitomeyo/cypress-training.git"
+  },
+  "keywords": [
+    "ui-testing",
+    "dojo",
+    "practice",
+    "cypress"
+  ],
+  "author": "Salome Aristizabal Giraldo <salitomeyo16@gmail.com> (https://github.com/salitomeyo)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/salitomeyo/cypress-training/issues"
+  },
+  "homepage": "https://github.com/salitomeyo/cypress-training#readme"
+}
