@@ -203,6 +203,5 @@ $RECYCLE.BIN/
 
 # End of https://www.toptal.com/developers/gitignore/api/windows,visualstudiocode,node,cypressio
 
-...
-cypress/integration/examples/*
-...
+cypress/e2e/1-getting-started
+cypress/e2e/2-advanced-examples
