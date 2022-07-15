@@ -9,14 +9,14 @@ describe("Buy a t-shirt", () => {
     cy.get("#email").type("aperdomobo@gmail.com");
     cy.get("#passwd").type("WorkshopProtractor");
 
-    cy.get('#SubmitLogin > span').click();
-    cy.get('.cart_navigation > .button > span').click();
+    cy.get("#SubmitLogin > span").click();
+    cy.get(".cart_navigation > .button > span").click();
 
-    cy.get('#cgv').check();
-    cy.get('.cart_navigation > .button > span').click();
+    cy.get("#cgv").check();
+    cy.get(".cart_navigation > .button > span").click();
 
-    cy.get('.bankwire').click();
-    cy.get('#cart_navigation > .button > span').click();
+    cy.get(".bankwire").click();
+    cy.get("#cart_navigation > .button > span").click();
 
     cy.get("#center_column > div > p > strong")
         .should("have.text", "Your order on My Store is complete.");
