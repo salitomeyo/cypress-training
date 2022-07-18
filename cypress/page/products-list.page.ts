@@ -2,7 +2,8 @@ class ProductsListPage {
     private addToCartBtn: string;
 
     constructor() {
-        this.addToCartBtn = "#center_column a.button.ajax_add_to_cart_button.btn.btn-default";
+        // Eliminate .btn.btn-default, this is innecesary because with the previous selectors we already reach the desired button
+        this.addToCartBtn = "#center_column a.button.ajax_add_to_cart_button";
     }
 
     public addTShirtToCart(): void {

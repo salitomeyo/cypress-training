@@ -5,7 +5,7 @@ class PaymentStepPage {
 
     constructor() {
         this.bankwireBtn = ".bankwire";
-        this.confirmOrderBtn = "#cart_navigation > .button > span";
+        this.confirmOrderBtn = "#cart_navigation > .button";
         this.confirmOrderMessage = "#center_column > div > p > strong";
     }
 
