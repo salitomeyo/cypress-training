@@ -4,10 +4,8 @@ class LoginPage {
     private loginBtn: string;
 
     constructor() {
-        // its always a good practice to use uique identifiers, so i didnt change them
         this.emailInput = "#email";
         this.passwordInput = "#passwd";
-        // Eliminate span, If the purpose is to click a button its unnecesary to reach for the span element, we can just eliminate this extra step and click the container
         this.loginBtn = "#SubmitLogin";
     }
 
