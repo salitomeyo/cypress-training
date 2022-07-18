@@ -26,8 +26,7 @@ describe("Buy a t-shirt", () => {
     shopingCartPage.goToCartPage();
     shopingCartPage.goToCheckoutPage();
 
-    loginPage.fillLoginForm("aperdomobo@gmail.com", "WorkshopProtractor");
-    loginPage.login();
+    loginPage.login("aperdomobo@gmail.com", "WorkshopProtractor");
 
     addressStepPage.goToShippingStep();
 
@@ -36,8 +35,5 @@ describe("Buy a t-shirt", () => {
 
     paymentStepPage.selectPaymentMethod();
     paymentStepPage.confirmOrder();
-
-    cy.get("#center_column > div > p > strong")
-        .should("have.text", "Your order on My Store is complete.");
   });
 });
