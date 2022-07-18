@@ -15,8 +15,10 @@ class PaymentStepPage {
 
     public confirmOrder(): void {
         cy.get(this.confirmOrderBtn).click();
-        cy.get(this.confirmOrderMessage)
-        .should("have.text", "Your order on My Store is complete.");
+    }
+
+    public getOrderLabel() {
+        return cy.get(this.confirmOrderMessage)
     }
 }
 
