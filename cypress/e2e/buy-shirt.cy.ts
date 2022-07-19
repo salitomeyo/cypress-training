@@ -27,7 +27,7 @@ describe("Buy a t-shirt", () => {
     paymentStepPage = new PaymentStepPage();
 
     menuContentPage.visitMenuContentPage();
-  })
+  });
 
   it("then the t-shirt should be bought", () => {
     menuContentPage.goToTShirtMenu();

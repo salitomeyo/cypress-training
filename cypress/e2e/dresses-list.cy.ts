@@ -14,7 +14,7 @@ describe("the user navigates to the dresses page should", () => {
   before(() => {
     menuContentPage = new MenuContentPage();
     dressesListPage = new DressesListPage();
-    
+
     menuContentPage.visitMenuContentPage();
   });
 
