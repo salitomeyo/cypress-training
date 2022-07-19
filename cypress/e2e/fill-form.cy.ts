@@ -24,6 +24,8 @@ describe("Buy a t-shirt", () => {
 
   it("then the t-shirt should be bought", () => {
     personalFormPage.fillForm(personalInformation);
+
+    personalFormPage.getModalTitle().should("have.text", "Thanks for submitting the form");
   });
 });
 
