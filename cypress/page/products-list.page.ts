@@ -1,11 +1,9 @@
-import { all } from "cypress/types/bluebird";
-
 class ProductsListPage {
     private addToCartBtn: string;
     private allProducts: string;
 
     constructor() {
-        this.addToCartBtn = ".ajax_add_to_cart_button";
+        this.addToCartBtn = "a[title='Add to cart']";
         this.allProducts = ".product-container";
     }
 
