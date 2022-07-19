@@ -16,6 +16,7 @@ describe("Buy a t-shirt", () => {
   let addressStepPage: AddressStepPage;
   let shippingStepPage: ShippingStepPage;
   let paymentStepPage: PaymentStepPage;
+  let fadedShortSleeveTShirt: string;
 
   before(() => {
     menuContentPage = new MenuContentPage();
@@ -26,13 +27,15 @@ describe("Buy a t-shirt", () => {
     shippingStepPage = new ShippingStepPage();
     paymentStepPage = new PaymentStepPage();
 
+    fadedShortSleeveTShirt = "Faded Short Sleeve T-shirts";
+
     menuContentPage.visitMenuContentPage();
   });
 
   it("then the t-shirt should be bought", () => {
     menuContentPage.goToTShirtMenu();
 
-    productsListPage.addTShirtToCart();
+    productsListPage.addTShirtToCart(fadedShortSleeveTShirt);
 
     shopingCartPage.goToCartPage();
     shopingCartPage.goToCheckoutPage();
