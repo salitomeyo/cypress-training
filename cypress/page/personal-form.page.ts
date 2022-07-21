@@ -47,18 +47,16 @@ class PersonalFormPage {
         cy.get(this.submitBtn).click({force: true});
     }
 
-    public fillDateInput(date: string){
+    private fillDateInput(date: string){
         const monthNames = ["January", "February", "March", "April", "May", "June",
         "July", "August", "September", "October", "November", "December"
         ];
         const newdate = new Date(date);
-        const year = newdate.getFullYear();
         const month = monthNames[newdate.getMonth()];
-        const day = newdate.getDate();
         cy.get(this.dateOfBirthPicker).click();
-        cy.get(this.datePickerValues[0]).select(`${year}`);
+        cy.get(this.datePickerValues[0]).select(`${newdate.getFullYear()}`);
         cy.get(this.datePickerValues[1]).select(`${month}`);
-        cy.get(this.datePickerValues[2]).filter(`:contains("${day}")`).eq(0).click()
+        cy.get(this.datePickerValues[2]).filter(`:contains("${newdate.getDate()}")`).eq(0).click()
     }
 
     public getModalTitle() {
