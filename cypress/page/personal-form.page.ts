@@ -48,14 +48,10 @@ class PersonalFormPage {
     }
 
     private fillDateInput(date: string){
-        const monthNames = ["January", "February", "March", "April", "May", "June",
-        "July", "August", "September", "October", "November", "December"
-        ];
         const newdate = new Date(date);
-        const month = monthNames[newdate.getMonth()];
         cy.get(this.dateOfBirthPicker).click();
         cy.get(this.datePickerValues[0]).select(`${newdate.getFullYear()}`);
-        cy.get(this.datePickerValues[1]).select(`${month}`);
+        cy.get(this.datePickerValues[1]).select(`${newdate.toLocaleString('default', { month: 'long' })}`);
         cy.get(this.datePickerValues[2]).filter(`:contains("${newdate.getDate()}")`).eq(0).click()
     }
 
