@@ -19,7 +19,7 @@ describe("Buy a t-shirt", () => {
   before(() => {
     personalFormPage = new PersonalFormPage();
 
-    cy.visit("https://demoqa.com/automation-practice-form");
+    personalFormPage.visitPersonalInfoFormPage();
   });
 
   it("then the t-shirt should be bought", () => {
