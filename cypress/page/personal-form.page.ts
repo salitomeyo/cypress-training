@@ -1,4 +1,13 @@
-import { forEach } from "cypress/types/lodash";
+interface PersonalInformation {
+    name: string;
+    lastName: string;
+    email: string;
+    gender: string;
+    dateOfBirth: string;
+    mobileNumber: string;
+    hobbies: string[];
+    currentAddress: string;
+}
 
 class PersonalFormPage {
     private personalInfoFormUrl: string;
@@ -33,7 +42,7 @@ class PersonalFormPage {
         cy.visit(this.personalInfoFormUrl);
     }
 
-    public fillForm(personalInformation: PersonalFormPage.PersonalInformation): void {
+    public fillForm(personalInformation: PersonalInformation): void {
         cy.get(this.nameInput).type(personalInformation.name);
         cy.get(this.lastnameInput).type(personalInformation.lastName);
         cy.get(this.emailInput).type(personalInformation.email);
@@ -57,19 +66,6 @@ class PersonalFormPage {
 
     public getModalTitle() {
         return cy.get(this.modalTitle);
-    }
-}
-
-namespace PersonalFormPage {
-    export interface PersonalInformation {
-        name: string;
-        lastName: string;
-        email: string;
-        gender: string;
-        dateOfBirth: string;
-        mobileNumber: string;
-        hobbies: string[];
-        currentAddress: string;
     }
 }
 
