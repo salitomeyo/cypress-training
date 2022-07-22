@@ -16,7 +16,8 @@ class PersonalFormPage {
     private emailInput: string;
     private genderRadioBtn: string;
     private dateOfBirthPicker: string;
-    private datePickerValues: string[];
+    private daysOutsideMonth: string;
+    private datePickerValues: {"year": string, "month": string, "day": string};
     private mobileNumberInput: string;
     private hobbiesCheckbox: string;
     private currentAddressInput: string;
@@ -30,7 +31,8 @@ class PersonalFormPage {
         this.emailInput = "#userEmail";
         this.genderRadioBtn = '[name="gender"]';
         this.dateOfBirthPicker = "#dateOfBirthInput";
-        this.datePickerValues = [".react-datepicker__year-select", ".react-datepicker__month-select", ".react-datepicker__day"];
+        this.daysOutsideMonth = ".react-datepicker__day--outside-month";
+        this.datePickerValues = {"year":".react-datepicker__year-select", "month":".react-datepicker__month-select", "day":".react-datepicker__day"};
         this.mobileNumberInput = "#userNumber";
         this.hobbiesCheckbox = '.custom-checkbox';
         this.currentAddressInput = "#currentAddress";
@@ -59,9 +61,9 @@ class PersonalFormPage {
     private fillDateInput(date: string){
         const newdate = new Date(date);
         cy.get(this.dateOfBirthPicker).click();
-        cy.get(this.datePickerValues[0]).select(`${newdate.getFullYear()}`);
-        cy.get(this.datePickerValues[1]).select(`${newdate.toLocaleString('default', { month: 'long' })}`);
-        cy.get(this.datePickerValues[2]).filter(`:contains("${newdate.getDate()}")`).eq(0).click()
+        cy.get(this.datePickerValues.year).select(`${newdate.getFullYear()}`);
+        cy.get(this.datePickerValues.month).select(`${newdate.toLocaleString('default', { month: 'long' })}`);
+        cy.get(this.datePickerValues.day).not(this.daysOutsideMonth).filter(`:contains("${newdate.getDate()}")`).click();
     }
 
     public getModalTitle() {
