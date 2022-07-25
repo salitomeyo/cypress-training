@@ -28,4 +28,3 @@ describe("Buy a t-shirt", () => {
     personalFormPage.getModalTitle().should("have.text", "Thanks for submitting the form");
   });
 });
-
