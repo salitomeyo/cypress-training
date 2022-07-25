@@ -1,12 +1,10 @@
 class DownloadPage {
     private downloadDemoUrl: string;
     private downloadBtn: string;
-    private uploadedFileTitle: string;
 
     constructor() {
         this.downloadDemoUrl = "https://demoqa.com/upload-download";
         this.downloadBtn = "#downloadButton";
-        this.uploadedFileTitle = "#drag-drop-upload .dz-filename > span";
     }
 
     public visitDownloadPage(): void{
