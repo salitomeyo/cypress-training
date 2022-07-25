@@ -23,7 +23,7 @@ describe("Upload a file", () => {
 
 describe("Download a file", () => {
   let downloadPage: DownloadPage;
-  
+
   before(() => {
     downloadPage = new DownloadPage();
 
@@ -33,6 +33,6 @@ describe("Download a file", () => {
   it("then a file should be downloaded", () => {
     downloadPage.downloadFile();
 
-    downloadPage.verifyFileName('sampleFile.jpeg');
+    downloadPage.verifyFileName("sampleFile.jpeg");
   });
 });
