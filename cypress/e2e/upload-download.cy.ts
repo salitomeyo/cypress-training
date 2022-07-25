@@ -1,5 +1,6 @@
 import {
   UploadPage,
+  DownloadPage,
 } from "../page/index";
 
 describe("Upload a file", () => {
@@ -20,4 +21,18 @@ describe("Upload a file", () => {
   });
 });
 
+describe("Download a file", () => {
+  let downloadPage: DownloadPage;
+  
+  before(() => {
+    downloadPage = new DownloadPage();
 
+    downloadPage.visitDownloadPage();
+  });
+
+  it("then a file should be downloaded", () => {
+    downloadPage.downloadFile();
+
+    downloadPage.verifyFileName('sampleFile.jpeg');
+  });
+});
