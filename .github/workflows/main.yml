@@ -27,8 +27,11 @@ jobs:
           browser: chrome
           headless: true
 
-      - name: Mochawesome report 
-        run: npm run test
+      - name: Report
+        run: npm run combine:reports
+        
+      - name: Report generation 
+        run: npm run generate:reports
 
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
