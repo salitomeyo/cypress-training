@@ -26,3 +26,14 @@ jobs:
         with:
           browser: chrome
           headless: true
+
+      - name: Report
+        run: npm run combine:reports
+        
+      - name: Report generation 
+        run: npm run generate:reports
+
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          folder: build
